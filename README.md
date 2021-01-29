@@ -14,6 +14,7 @@ function calc (p1, p2) {
     return p1 * p2;
 }
 alert(calc (4, 3));
+
 //12
 
 Function Expression:
@@ -22,6 +23,7 @@ let calc = function(p1, p2){
     return p1 * p2;
 }
 alert(calc (4,3));
+
 //12
 
 
@@ -62,7 +64,7 @@ Fakat fonksiyona karşılık gelen bir isim bulamadığı için alttaki hatayı 
 
 // Error: Unexpected token (
 
-    // <-- JavaScript fonksiyon ismini bulamadı. ('i gördü ve hemen hata verdi.
+// <-- JavaScript fonksiyon ismini bulamadı. ('i gördü ve hemen hata verdi.
 
 function () {                       
 
@@ -75,7 +77,7 @@ function () {
 İlk durumda karşılaştığımız hatanın sebebi fonksiyonun isimsiz olmasıydı fakat bu problemi fonksiyonu isim ile tanımlayarak da çözemeyiz. 
 Çünkü JavaScript, fonksiyon tanımlamalarının anında çalışmasına izin vermez ve yine hata verir.
 
-                    // Bu defa aşağıdaki parantez hata verecektir. Çünkü bu şekilde fonksiyon tanımı anında çalıştırılmaz.
+// Bu defa aşağıdaki parantez hata verecektir. Çünkü bu şekilde fonksiyon tanımı anında çalıştırılmaz.
                     
 function message () {
 
@@ -104,4 +106,4 @@ Alttaki fonksiyonda bu durumun örneğini görebiliriz.
 
 console.log(firstName);
 
-    //  Uncaught ReferenceError: firstName is not defined
+//  Uncaught ReferenceError: firstName is not defined
