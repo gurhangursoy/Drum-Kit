@@ -50,7 +50,7 @@ Alttaki örnek kullanımda görüldüğü gibi fonksiyonumuzu parantez içine al
 
 ( () => {
 
-    // do something
+   // do something
     
 })();
 
@@ -62,8 +62,9 @@ Fakat fonksiyona karşılık gelen bir isim bulamadığı için alttaki hatayı 
 
 // Error: Unexpected token (
 
+    // <-- JavaScript fonksiyon ismini bulamadı. ('i gördü ve hemen hata verdi.
 
-function () {                        // <-- JavaScript fonksiyon ismini bulamadı. ('i gördü ve hemen hata verdi.
+function () {                       
 
   let mesaj = "Merhaba";
 
@@ -74,17 +75,18 @@ function () {                        // <-- JavaScript fonksiyon ismini bulamad�
 İlk durumda karşılaştığımız hatanın sebebi fonksiyonun isimsiz olmasıydı fakat bu problemi fonksiyonu isim ile tanımlayarak da çözemeyiz. 
 Çünkü JavaScript, fonksiyon tanımlamalarının anında çalışmasına izin vermez ve yine hata verir.
 
-                              // Bu defa aşağıdaki parantez hata verecektir.
+                    // Bu defa aşağıdaki parantez hata verecektir. Çünkü bu şekilde fonksiyon tanımı anında çalıştırılmaz.
+                    
 function message () {
 
   let mesaj = "Merhaba";
 
   alert(mesaj); // Merhaba
   
-}();                          // <-- Fonskyion Tanımı anında çalıştırılamaz.
+}();                        
+              
 
-
-Bu hataları almamak için fonksiyonumuzu () ile sarmamız gerekir.
+Bu tarz hataları almamak için fonksiyonumuzu () ile sarmamız gerekir.
 
 
 ## IIFE kullanım amacı ve faydaları nelerdir ?
@@ -92,12 +94,14 @@ Bu hataları almamak için fonksiyonumuzu () ile sarmamız gerekir.
 IIFE'nin temel kullanım amacı, fonksiyon içinde yer alan değerlere dışarıdan erişimi engelleyerek izole bir kapsam oluşturmaktır. 
 Alttaki örnekten de anlaşılacağı üzere, fonksiyonu saran parantezler sayesinde fonksiyon içindeki değerler sadece bu fonksiyon çağrıldığında kullanılabilecek durumdadır ve dışarıdan erişmek mümkün değildir.  
 Bu sayede fonksiyon içindeki değerlerin yanlışlıkla değiştirilmesi gibi istenmeyen durumların önüne geçilmiş olur.
+Alttaki fonksiyonda bu durumun örneğini görebiliriz.
 
 (function() {
+
    let firstName = "Steve";
 }
 )();
 
 console.log(firstName);
 
-//  Uncaught ReferenceError: firstName is not defined
+    //  Uncaught ReferenceError: firstName is not defined
