@@ -8,7 +8,7 @@ Bu fonksiyonlar tanımlandıkları yerde hemen çağrılarak çalıştırılır.
 
 ## Kullanım örnekleri nelerdir ?
 
-Normalde bir fonksiyona ihtiyacımız olduğunda "Function Declaration" ya da "Function Expression" kullanırız ve bu fonksiyonları ihtiyacımız olduğu her an çağırıp yeniden kullanabiliriz. 
+Normalde bir fonksiyona ihtiyacımız olduğunda "Function Declaration" ya da "Function Expression" kullanırız ve bu fonksiyonları ihtiyaç duyduğumuz her an çağırıp yeniden kullanabiliriz. 
 
 Function Declaration:                                       
 
@@ -83,7 +83,7 @@ function () {
 İlk durumda karşılaştığımız hatanın sebebi fonksiyonun isimsiz olmasıydı fakat bu problemi fonksiyonu isim ile tanımlayarak da çözemeyiz. 
 Çünkü JavaScript, fonksiyon tanımlamalarının anında çalışmasına izin vermez ve yine hata verir.
 
-    // Bu defa aşağıdaki parantez hata verecektir. Çünkü bu şekilde tanımlanan bir fonksiyon anında çalıştırılmaz.
+    // Alttaki örnekte ise fonksiyonu anında çalıştırmak için kullandığımız () hata verecektir. Çünkü bu şekilde tanımlanan bir fonksiyon anında çalıştırılamaz.
                     
 function message () {
 
@@ -100,7 +100,7 @@ Bu tarz hataları almamak için fonksiyonumuzu () ile sarmamız gerekir.
 ## IIFE kullanım amacı ve faydaları nelerdir ?
 
 IIFE'nin temel kullanım amacı, fonksiyon içinde yer alan değerlere dışarıdan erişimi engelleyerek izole bir kapsam oluşturmaktır. 
-Alttaki örnekten de anlaşılacağı üzere, fonksiyonu saran parantezler sayesinde fonksiyon içindeki değerler sadece bu fonksiyon çağrıldığında kullanılabilecek durumdadır ve dışarıdan erişmek mümkün değildir.  
+Alttaki örnekten de anlaşılacağı üzere, fonksiyonu saran parantezler sayesinde fonksiyon içindeki değerler sadece bu fonksiyon çağrıldığında kullanılabilecek durumdadır ve dışarıdan erişime izin verilmez.  
 Bu sayede fonksiyon içindeki değerlerin yanlışlıkla değiştirilmesi gibi istenmeyen durumların önüne geçilmiş olur.
 
 Bu durumun bir örneğini görelim.
