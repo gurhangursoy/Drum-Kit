@@ -1,27 +1,33 @@
 # IIFE
 
 ## IIFE nedir ?
+
 JavaScriptte yalnızca bir kez kullanacağımız ve sonrasında tekrar ihtiyacımız olmayacak fonksiyonlar kullanmak zorunda kalabiliriz. 
 Bu tarz durumlarda tercih ettiğimiz fonksiyonlara  "Immediately Invoked Function Expression" (IIEF) adı  verilir. 
 Bu fonksiyonlar tanımlandıkları yerde hemen çağrılarak çalıştırılır.    
 
 ## Kullanım örnekleri nelerdir ?
+
 Normalde bir fonksiyona ihtiyacımız olduğunda "Function Declaration" ya da "Function Expression" kullanırız ve bu fonksiyonları ihtiyacımız olduğu her an çağırıp yeniden kullanabiliriz. 
 
 Function Declaration:                                       
 
 function calc (p1, p2) {
+
     return p1 * p2;
 }
+
 alert(calc (4, 3));
 
 //12
 
 Function Expression:
 
-let calc = function(p1, p2){
+let calc = function (p1, p2) {
+
     return p1 * p2;
 }
+
 alert(calc (4,3));
 
 //12
@@ -32,21 +38,21 @@ Alttaki örnek kullanımda görüldüğü gibi fonksiyonumuzu parantez içine al
 
 * Genel kullanım ;
 
-(function () {
+( function () {
 
   let message = "Hello";
 
   alert(message); // Hello
 
-})();
+}) ();
 
 * İsimlendirilerek kullanım;
 
-(function doSomething() {
+( function doSomething() {
 
   // do something
   
-})();
+}) ();
 
 * "Arrow Function" biçiminde kullanım;
 
@@ -54,7 +60,7 @@ Alttaki örnek kullanımda görüldüğü gibi fonksiyonumuzu parantez içine al
 
    // do something
     
-})();
+}) ();
 
 
 ## Syntax Hataları
@@ -72,12 +78,12 @@ function () {
 
   alert(mesaj); // Merhaba
 
-}();
+} ();
 
 İlk durumda karşılaştığımız hatanın sebebi fonksiyonun isimsiz olmasıydı fakat bu problemi fonksiyonu isim ile tanımlayarak da çözemeyiz. 
 Çünkü JavaScript, fonksiyon tanımlamalarının anında çalışmasına izin vermez ve yine hata verir.
 
-    // Bu defa aşağıdaki parantez hata verecektir. Çünkü bu şekilde fonksiyon tanımı anında çalıştırılmaz.
+    // Bu defa aşağıdaki parantez hata verecektir. Çünkü bu şekilde tanımlanan bir fonksiyon anında çalıştırılmaz.
                     
 function message () {
 
@@ -85,7 +91,7 @@ function message () {
 
   alert(mesaj); // Merhaba
   
-}();                        
+} ();                        
               
 
 Bu tarz hataları almamak için fonksiyonumuzu () ile sarmamız gerekir.
@@ -96,14 +102,19 @@ Bu tarz hataları almamak için fonksiyonumuzu () ile sarmamız gerekir.
 IIFE'nin temel kullanım amacı, fonksiyon içinde yer alan değerlere dışarıdan erişimi engelleyerek izole bir kapsam oluşturmaktır. 
 Alttaki örnekten de anlaşılacağı üzere, fonksiyonu saran parantezler sayesinde fonksiyon içindeki değerler sadece bu fonksiyon çağrıldığında kullanılabilecek durumdadır ve dışarıdan erişmek mümkün değildir.  
 Bu sayede fonksiyon içindeki değerlerin yanlışlıkla değiştirilmesi gibi istenmeyen durumların önüne geçilmiş olur.
-Alttaki fonksiyonda bu durumun örneğini görebiliriz.
 
-(function() {
+Bu durumun bir örneğini görelim.
+
+( function () {
 
    let firstName = "Steve";
 }
-)();
-
+) ();
+ 
 console.log(firstName);
 
     //  Uncaught ReferenceError: firstName is not defined
+    
+ Yukarıdaki fonksiyonumuzu çalıştırdığımızda herhangi bir hata ile karşılaşmasak da fonksiyon dışında bir yerde firstName değerine ulaşmak istediğimizde hata aldık.
+ Çünkü belirtilen değer sadece fonksiyon içinde erişilebilir durumdaydı.
+ IIFE fonksiyon içinde izole bir kapsam oluşturarak dışarıdan erişimi engellemiş oldu.
