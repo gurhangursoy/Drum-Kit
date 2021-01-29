@@ -32,7 +32,7 @@ Alttaki örnek kullanımda görüldüğü gibi fonksiyonumuzu parantez içine al
 
 * Genel kullanım ;
 
-(function() {
+(function () {
 
   let message = "Hello";
 
@@ -62,9 +62,9 @@ Alttaki örnek kullanımda görüldüğü gibi fonksiyonumuzu parantez içine al
 Fonksiyonu saracak parantezleri kullanmadığımız takdirde JavaScript kod akışında "function" görüp bunu fonksiyon tanımı olarak algılar.
 Fakat fonksiyona karşılık gelen bir isim bulamadığı için alttaki hatayı verecektir.
 
-// Error: Unexpected token (
+    // Error: Unexpected token (
 
-// <-- JavaScript fonksiyon ismini bulamadı. ('i gördü ve hemen hata verdi.
+    // <-- JavaScript fonksiyon ismini bulamadı. ('i gördü ve hemen hata verdi.
 
 function () {                       
 
@@ -77,7 +77,7 @@ function () {
 İlk durumda karşılaştığımız hatanın sebebi fonksiyonun isimsiz olmasıydı fakat bu problemi fonksiyonu isim ile tanımlayarak da çözemeyiz. 
 Çünkü JavaScript, fonksiyon tanımlamalarının anında çalışmasına izin vermez ve yine hata verir.
 
-// Bu defa aşağıdaki parantez hata verecektir. Çünkü bu şekilde fonksiyon tanımı anında çalıştırılmaz.
+    // Bu defa aşağıdaki parantez hata verecektir. Çünkü bu şekilde fonksiyon tanımı anında çalıştırılmaz.
                     
 function message () {
 
@@ -106,4 +106,4 @@ Alttaki fonksiyonda bu durumun örneğini görebiliriz.
 
 console.log(firstName);
 
-//  Uncaught ReferenceError: firstName is not defined
+    //  Uncaught ReferenceError: firstName is not defined
